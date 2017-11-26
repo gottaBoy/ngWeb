@@ -6,6 +6,7 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 import { FooterComponent } from './footer/footer.component';
 import { ContentComponent } from './content/content.component';
 import {StockModule} from "../stock/stock.module";
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 @NgModule({
   imports: [
@@ -17,14 +18,16 @@ import {StockModule} from "../stock/stock.module";
     MenuComponent,
     SidebarComponent,
     FooterComponent,
-    ContentComponent,
+    // ContentComponent,
+    // DashboardComponent,
   ],
   exports: [
     HeaderComponent,
     MenuComponent,
     SidebarComponent,
     FooterComponent,
-    ContentComponent
+    // ContentComponent,
+    // DashboardComponent
   ]
 })
 export class CoreModule { }

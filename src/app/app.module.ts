@@ -3,16 +3,32 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import {CoreModule} from "./core/core.module";
+import {Routes, RouterModule} from "@angular/router";
+import {StockManageComponent} from "./stock/stock-manage/stock-manage.component";
+import {DashboardComponent} from "./core/dashboard/dashboard.component";
+import {StockFormComponent} from "./stock/stock-form/stock-form.component";
+import {ContentComponent} from "./core/content/content.component";
+import {StockService} from "./stock/stock.service";
+
+const routeConfig:Routes = [
+  {path:'',redirectTo:'/dashboard',pathMatch:'full'},
+  {path:'dashboard',component:DashboardComponent},
+  {path:'stock',component:StockManageComponent},
+  {path:'stock/:id',component:StockFormComponent}
+];
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ContentComponent,
+    DashboardComponent,
   ],
   imports: [
     BrowserModule,
-    CoreModule
+    CoreModule,
+    RouterModule.forRoot(routeConfig)
   ],
-  providers: [],
+  providers: [StockService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
