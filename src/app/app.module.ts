@@ -9,6 +9,8 @@ import {DashboardComponent} from "./core/dashboard/dashboard.component";
 import {StockFormComponent} from "./stock/stock-form/stock-form.component";
 import {ContentComponent} from "./core/content/content.component";
 import {StockService} from "./stock/stock.service";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import {HttpModule} from "@angular/http";
 
 const routeConfig:Routes = [
   {path:'',redirectTo:'/dashboard',pathMatch:'full'},
@@ -26,6 +28,9 @@ const routeConfig:Routes = [
   imports: [
     BrowserModule,
     CoreModule,
+    FormsModule,
+    HttpModule,
+    ReactiveFormsModule,
     RouterModule.forRoot(routeConfig)
   ],
   providers: [StockService],
